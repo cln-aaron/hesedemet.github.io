@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220" fill="currentColor">
+  <!-- RING (donut via evenodd) -->
+  <path fill-rule="evenodd" d="M100,8 A14,14 0 0,1 100,36 A14,14 0 0,1 100,8 Z M100,15 A7,7 0 0,0 100,29 A7,7 0 0,0 100,15 Z"/>
+
+  <!-- SHAFT -->
+  <rect x="97" y="29" width="6" height="163"/>
+
+  <!-- STOCK (horizontal crossbar) -->
+  <rect x="20" y="76" width="160" height="7"/>
+
+  <!-- H – left vertical -->
+  <rect x="54" y="89" width="7" height="88"/>
+
+  <!-- H – crossbar connecting left vertical to shaft -->
+  <rect x="54" y="128" width="43" height="7"/>
+
+  <!-- E – three bars extending right from shaft -->
+  <rect x="103" y="93"  width="46" height="7"/>
+  <rect x="103" y="122" width="37" height="7"/>
+  <rect x="103" y="156" width="46" height="7"/>
+
+  <!-- LEFT FLUKE -->
+  <path d="M97,186 C80,186 50,183 26,200 L18,212 L34,205 C56,196 82,192 97,192 Z"/>
+
+  <!-- RIGHT FLUKE -->
+  <path d="M103,186 C120,186 150,183 174,200 L182,212 L166,205 C144,196 118,192 103,192 Z"/>
+</svg>

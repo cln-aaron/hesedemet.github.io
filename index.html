@@ -87,12 +87,15 @@
       border-bottom: 1px solid rgba(42,255,210,0.08);
     }
     .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none;
       font-family: var(--mono);
       font-size: 13px;
       letter-spacing: 0.12em;
       color: var(--accent);
       text-transform: uppercase;
     }
+    .nav-logo-icon { height: 36px; width: auto; flex-shrink: 0; }
     .nav-logo span { color: var(--ice2); }
     .nav-links { display: flex; gap: 40px; list-style: none; }
     .nav-links a {
@@ -633,7 +636,21 @@
 
   <!-- NAV -->
   <nav>
-    <div class="nav-logo">Hesed<span> & </span>Emet</div>
+    <div class="nav-logo">
+      <svg class="nav-logo-icon" viewBox="0 0 200 220" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M100,8 A14,14 0 0,1 100,36 A14,14 0 0,1 100,8 Z M100,15 A7,7 0 0,0 100,29 A7,7 0 0,0 100,15 Z"/>
+        <rect x="97" y="29" width="6" height="163"/>
+        <rect x="20" y="76" width="160" height="7"/>
+        <rect x="54" y="89" width="7" height="88"/>
+        <rect x="54" y="128" width="43" height="7"/>
+        <rect x="103" y="93"  width="46" height="7"/>
+        <rect x="103" y="122" width="37" height="7"/>
+        <rect x="103" y="156" width="46" height="7"/>
+        <path d="M97,186 C80,186 50,183 26,200 L18,212 L34,205 C56,196 82,192 97,192 Z"/>
+        <path d="M103,186 C120,186 150,183 174,200 L182,212 L166,205 C144,196 118,192 103,192 Z"/>
+      </svg>
+      <span class="nav-logo-text">Hesed<span> & </span>Emet</span>
+    </div>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
       <li><a href="#about">About</a></li>
@@ -973,7 +990,20 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-logo">Hesed & Emet Advisory</div>
+    <div class="footer-logo">
+      <svg style="height:28px;width:auto;vertical-align:middle;margin-right:8px;" viewBox="0 0 200 220" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M100,8 A14,14 0 0,1 100,36 A14,14 0 0,1 100,8 Z M100,15 A7,7 0 0,0 100,29 A7,7 0 0,0 100,15 Z"/>
+        <rect x="97" y="29" width="6" height="163"/>
+        <rect x="20" y="76" width="160" height="7"/>
+        <rect x="54" y="89" width="7" height="88"/>
+        <rect x="54" y="128" width="43" height="7"/>
+        <rect x="103" y="93"  width="46" height="7"/>
+        <rect x="103" y="122" width="37" height="7"/>
+        <rect x="103" y="156" width="46" height="7"/>
+        <path d="M97,186 C80,186 50,183 26,200 L18,212 L34,205 C56,196 82,192 97,192 Z"/>
+        <path d="M103,186 C120,186 150,183 174,200 L182,212 L166,205 C144,196 118,192 103,192 Z"/>
+      </svg>Hesed & Emet Advisory
+    </div>
     <div class="footer-copy">© 2025 Hesed & Emet Advisory. All rights reserved.</div>
     <div class="footer-links">
       <a href="#services">Services</a>
