@@ -701,17 +701,67 @@
       .principal-grid { grid-template-columns: 1fr; gap: 40px; }
     }
 
-    .media-links { margin-top: 16px; display: flex; flex-direction: column; gap: 10px; }
-    .media-link {
-      display: flex; align-items: baseline; gap: 10px;
-      font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em;
-      color: var(--accent); text-decoration: none;
-      transition: color 0.2s, gap 0.2s;
+    /* MEDIA SECTION */
+    .media-feature { margin-top: 64px; }
+    .media-feature-header { margin-bottom: 28px; }
+    .media-list { display: flex; flex-direction: column; gap: 1px; background: var(--edge); border: 1px solid var(--edge); }
+    .media-item {
+      background: var(--navy3);
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 32px;
+      padding: 32px 36px;
+      text-decoration: none;
+      transition: background 0.2s;
+      position: relative;
     }
-    .media-link::before { content: '→'; color: var(--muted); flex-shrink: 0; transition: color 0.2s; }
-    .media-link:hover { color: var(--white); gap: 14px; }
-    .media-link:hover::before { color: var(--accent); }
-    .media-link-placeholder { color: var(--muted); font-style: italic; }
+    .media-item::before {
+      content: '';
+      position: absolute; left: 0; top: 0; bottom: 0; width: 2px;
+      background: linear-gradient(180deg, var(--accent), var(--accent2));
+      transform: scaleY(0); transform-origin: top;
+      transition: transform 0.3s;
+    }
+    .media-item:hover { background: var(--panel); }
+    .media-item:hover::before { transform: scaleY(1); }
+    .media-pub-tag {
+      font-family: var(--mono); font-size: 9px;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid rgba(42,255,210,0.25);
+      background: rgba(42,255,210,0.04);
+      padding: 6px 10px;
+      text-align: center;
+      line-height: 1.6;
+      align-self: flex-start;
+      margin-top: 4px;
+    }
+    .media-pub-tag.personal { color: var(--ice2); border-color: rgba(143,168,204,0.25); background: rgba(143,168,204,0.04); }
+    .media-content { display: flex; flex-direction: column; }
+    .media-title {
+      font-family: var(--sans); font-size: 16px; font-weight: 700;
+      color: var(--white); letter-spacing: -0.01em; margin-bottom: 10px;
+    }
+    .media-summary {
+      font-family: var(--mono); font-size: 11px; line-height: 1.85;
+      color: var(--ice2); margin-bottom: 12px;
+    }
+    .media-quote {
+      font-family: var(--mono); font-size: 11px; line-height: 1.85;
+      color: var(--ice); font-style: italic;
+      border-left: 2px solid var(--accent);
+      padding-left: 14px; margin-bottom: 14px;
+    }
+    .media-read {
+      font-family: var(--mono); font-size: 10px;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--accent); display: inline-flex; align-items: center; gap: 6px;
+      transition: gap 0.2s;
+    }
+    .media-item:hover .media-read { gap: 10px; }
+    @media (max-width: 900px) {
+      .media-item { grid-template-columns: 1fr; gap: 16px; padding: 24px 20px; }
+    }
 
     /* SCROLL REVEAL */
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
@@ -1051,12 +1101,7 @@
               <div>
                 <div class="cred-label">Media &amp; Public Commentary</div>
                 <div class="cred-title">Voice on Singapore's Cybersecurity Landscape</div>
-                <div class="cred-body">A sought-after expert commentator for national and regional media — providing insight on major cybersecurity incidents, data breaches, AI-related threats, and the policy dimensions of digital security affecting Singapore and the broader Asia-Pacific region.</div>
-                <div class="media-links">
-                  <a href="#" class="media-link media-link-placeholder">Add media interview link here</a>
-                  <a href="#" class="media-link media-link-placeholder">Add media interview link here</a>
-                  <a href="#" class="media-link media-link-placeholder">Add media interview link here</a>
-                </div>
+                <div class="cred-body">A trusted expert commentator for national and regional media — called upon to provide insight on Singapore's most significant cybersecurity incidents, data breaches, AI-related threats, and digital policy decisions affecting the broader Asia-Pacific region.</div>
               </div>
             </div>
 
@@ -1064,6 +1109,95 @@
         </div>
 
       </div>
+
+      <!-- MEDIA COVERAGE -->
+      <div class="media-feature reveal">
+        <div class="media-feature-header">
+          <div class="section-label">In the Media</div>
+        </div>
+        <div class="media-list">
+
+          <a href="https://www.straitstimes.com/singapore/concerns-raised-over-ease-of-accessing-nric-numbers-from-acra-portal" target="_blank" rel="noopener" class="media-item">
+            <div class="media-pub-tag">The Straits<br>Times</div>
+            <div class="media-content">
+              <div class="media-title">Concerns Raised Over Ease of Accessing NRIC Numbers from ACRA Portal</div>
+              <div class="media-summary">ACRA's new Bizfile portal exposed the full NRIC numbers of Singapore citizens — including cabinet ministers — to public search without login. The incident triggered a national reckoning over digital identity infrastructure, data protection policy, and government accountability in the digital age.</div>
+              <div class="media-quote">"If this blunder by the Government has in some way enabled cyber criminals, then I think that while the government agencies have invested so much in scam prevention, we have inadvertently shot ourselves in the foot and moved steps backwards."</div>
+              <span class="media-read">Read Article →</span>
+            </div>
+          </a>
+
+          <a href="https://www.channelnewsasia.com/podcasts/what-does-unmasking-nric-numbers-privacy-security-deep-dive-podcast-4810841" target="_blank" rel="noopener" class="media-item">
+            <div class="media-pub-tag">CNA<br>Podcast</div>
+            <div class="media-content">
+              <div class="media-title">What Does Unmasking NRIC Numbers Mean for Your Privacy and Security?</div>
+              <div class="media-summary">Featured on Channel NewsAsia's deep-dive podcast alongside legal experts from Rajah & Tann Singapore, examining the privacy and security implications of Singapore's NRIC unmasking policy — and what individuals and organisations must now do to protect themselves.</div>
+              <div class="media-quote">"The unmasking makes Singaporeans extremely vulnerable to scammers who use NRIC numbers to secure the trust of victims — this is the kind of data that enables highly targeted, convincing attacks."</div>
+              <span class="media-read">Listen to Podcast →</span>
+            </div>
+          </a>
+
+          <a href="https://www.straitstimes.com/singapore/some-telco-technical-data-may-open-more-doors-for-cyber-attackers-experts" target="_blank" rel="noopener" class="media-item">
+            <div class="media-pub-tag">The Straits<br>Times</div>
+            <div class="media-content">
+              <div class="media-title">Some Telco Technical Data May Open More Doors for Cyber Attackers</div>
+              <div class="media-summary">Following the revelation that state-sponsored group UNC3886 had exfiltrated network data from Singapore's four major telcos, Aaron was called upon to explain the strategic risk of stolen infrastructure blueprints — and why technical data is often more dangerous than personal data in the wrong hands.</div>
+              <div class="media-quote">"Such technical data is like the blueprints and guard schedules of a building. A thief with it knows exactly where to enter, which paths avoid cameras, and how to reach restricted rooms — including backdoors into neighbouring buildings."</div>
+              <span class="media-read">Read Article →</span>
+            </div>
+          </a>
+
+          <a href="https://www.straitstimes.com/singapore/singtel-outage-experts-call-for-review-of-emergency-hotline-contingency-plans" target="_blank" rel="noopener" class="media-item">
+            <div class="media-pub-tag">The Straits<br>Times</div>
+            <div class="media-content">
+              <div class="media-title">Singtel Outage: Experts Call for Review of Emergency Hotline Contingency Plans</div>
+              <div class="media-summary">A major Singtel landline outage in October 2024 severed access to police and SCDF emergency lines 999 and 995 for hours. Cybersecurity experts questioned why critical public safety infrastructure lacked immediate failover, and called for a systemic review of contingency planning across operators.</div>
+              <div class="media-quote">"It appears that emergency hotline operators did not have backup services ready for immediate switchover — given the hours-long disruption, the gap in resilience planning is difficult to overlook."</div>
+              <span class="media-read">Read Article →</span>
+            </div>
+          </a>
+
+          <a href="https://www.straitstimes.com/tech/singtel-hit-by-second-disruption-a-day-after-eight-hour-outage" target="_blank" rel="noopener" class="media-item">
+            <div class="media-pub-tag">The Straits<br>Times</div>
+            <div class="media-content">
+              <div class="media-title">Singtel Hit by Second Disruption a Day After Eight-Hour Outage</div>
+              <div class="media-summary">When Singtel suffered a second major outage within 24 hours — disrupting payments, ride-hailing, and essential services across Singapore — Aaron provided expert perspective on why post-incident recovery actions can carry their own risks, and what repeated failures signal about infrastructure resilience.</div>
+              <div class="media-quote">"Engineers responding to a major outage often restart systems, reroute traffic, or implement quick fixes — and such remedial actions may themselves shift loads in ways that trigger secondary disruptions."</div>
+              <span class="media-read">Read Article →</span>
+            </div>
+          </a>
+
+          <a href="https://www.straitstimes.com/singapore/telcos-banks-chat-apps-among-net-based-services-to-experience-temporary-spike-in-disruptions" target="_blank" rel="noopener" class="media-item">
+            <div class="media-pub-tag">The Straits<br>Times</div>
+            <div class="media-content">
+              <div class="media-title">Telcos, Banks, Chat Apps Among Online Services to Experience Temporary Spike in Disruptions</div>
+              <div class="media-summary">A concurrent spike in disruptions across Singapore's digital infrastructure — spanning telcos, banks, and messaging platforms — raised concerns about systemic interdependencies in the nation's online services and what simultaneous failures mean for digital resilience.</div>
+              <span class="media-read">Read Article →</span>
+            </div>
+          </a>
+
+          <a href="https://mothership.sg/2023/01/circles-life-esim-swap-fraud/" target="_blank" rel="noopener" class="media-item">
+            <div class="media-pub-tag">Mothership</div>
+            <div class="media-content">
+              <div class="media-title">Hacker Obtains OTP via Help Chat, Activates Circles.Life User's eSIM & Logs Into E-commerce Accounts</div>
+              <div class="media-summary">A social engineering attack on Circles.Life's customer service channel allowed a bad actor to take over a victim's eSIM and access her e-commerce accounts — without exploiting any technical vulnerability. Aaron explained why the incident exposed a fundamental process gap, not a technology one.</div>
+              <div class="media-quote">"This is more of a process issue than a vulnerability. OTPs should never be provided over chat — it simply defeats the purpose of having an OTP. The bar for verification must be higher than what a social engineer can talk their way past."</div>
+              <span class="media-read">Read Article →</span>
+            </div>
+          </a>
+
+          <a href="https://www.8world.com/singapore/man-once-overweight-and-diagnosed-with-obesity-now-challenging-full-marathon-2591646" target="_blank" rel="noopener" class="media-item">
+            <div class="media-pub-tag personal">8world<br>Feature</div>
+            <div class="media-content">
+              <div class="media-title">From Obesity Diagnosis to Full Marathon: A Personal Journey</div>
+              <div class="media-summary">A personal feature by 8world on Aaron's journey from being overweight and clinically diagnosed with obesity, to lining up at the start of the Standard Chartered Singapore Marathon. A story of discipline, resilience, and the belief that transformation — personal or organisational — is always possible with the right mindset.</div>
+              <span class="media-read">Read Feature →</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
     </div>
   </section>
 
