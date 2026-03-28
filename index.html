@@ -560,6 +560,13 @@
       color: var(--navy); background: var(--accent);
       padding: 4px 10px; margin-bottom: 28px;
     }
+    .venture-badge.partner-badge {
+      background: var(--accent2); color: var(--navy);
+    }
+    .cyberbay-logo {
+      filter: brightness(0) invert(1);
+      opacity: 0.9;
+    }
     .venture-logo-wrap {
       display: flex; flex-direction: column;
       align-items: flex-start; gap: 20px;
@@ -1658,12 +1665,40 @@
           <span class="ventures-sub-desc">Carefully selected products we carry, recommend, and deploy for our clients.</span>
         </div>
         <div class="ventures-grid">
+
+          <!-- CYBERBAY -->
+          <div class="venture-card featured">
+            <div class="venture-logo-wrap">
+              <div class="venture-badge partner-badge">Technology Partner</div>
+              <img src="https://cms-public-web.cyberbay.tech/uploads/cyberbay_logo_098634defb.svg" alt="Cyberbay" class="venture-logo-img cyberbay-logo">
+              <a href="https://www.cyberbay.tech" target="_blank" rel="noopener" class="venture-link">
+                Visit cyberbay.tech <span>→</span>
+              </a>
+            </div>
+            <div class="venture-body">
+              <div class="venture-name">Cyberbay<span style="color:var(--accent2);">.</span></div>
+              <div class="venture-tagline">A Connected Cybersecurity Ecosystem for Continuous Protection</div>
+              <div class="venture-desc">
+                <p>Most organisations treat security as a series of events — a penetration test here, an audit there. Cyberbay is built on a different premise: that meaningful protection requires continuous visibility, persistent intelligence, and honest external challenge. Their platform converges AI-driven attack surface monitoring, real-time threat intelligence, and a pre-vetted global community of ethical security researchers into a single, coherent ecosystem — one that finds what your internal teams cannot, and keeps finding it as your environment evolves.</p>
+                <p>We partner with Cyberbay because they operationalise something we advocate for in every client engagement: the shift from reactive defence to proactive resilience. Through Cyberbay's crowdsourced vulnerability discovery programmes, organisations gain access to a diverse, motivated community of researchers whose breadth of technique and independence of perspective surfaces critical weaknesses that structured assessments routinely miss. Their threat intelligence capability — tracking adversary activity, attack signals, and digital exposure across industries and regions — gives clients the early warning needed to respond before incidents escalate.</p>
+                <p>Together, we deploy Cyberbay's capabilities as part of integrated advisory engagements — helping clients not just identify their exposure, but understand it in the context of their risk appetite, governance frameworks, and the human factors that ultimately determine whether vulnerabilities get remediated or remain open. Because in our experience, the difference between a finding and a fix is rarely technical. It's organisational.</p>
+              </div>
+              <div class="venture-caps">
+                <span class="venture-cap">Crowdsourced Vulnerability Discovery</span>
+                <span class="venture-cap">AI Attack Surface Monitoring</span>
+                <span class="venture-cap">Threat Intelligence</span>
+                <span class="venture-cap">Continuous Security Testing</span>
+                <span class="venture-cap">Security Risk Assessment</span>
+                <span class="venture-cap">Virtual CISO</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- FUTURE PARTNER SLOT -->
           <div class="venture-card venture-partner-slot">
             <div class="venture-partner-label">Partner coming soon</div>
           </div>
-          <div class="venture-card venture-partner-slot">
-            <div class="venture-partner-label">Partner coming soon</div>
-          </div>
+
         </div>
       </div>
 
