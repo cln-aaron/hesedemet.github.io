@@ -763,6 +763,82 @@
       .media-item { grid-template-columns: 1fr; gap: 16px; padding: 24px 20px; }
     }
 
+    /* TALKS / SPEAKING */
+    #talks { background: var(--navy2); }
+    #talks::before {
+      content: '';
+      position: absolute; left: 0; top: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--edge), transparent);
+    }
+    .talks-list {
+      display: flex; flex-direction: column; gap: 1px;
+      background: var(--edge); border: 1px solid var(--edge);
+      margin-top: 64px;
+    }
+    .talk-item {
+      background: var(--navy2);
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      position: relative; overflow: hidden;
+      transition: background 0.2s;
+    }
+    .talk-item::before {
+      content: '';
+      position: absolute; left: 0; top: 0; bottom: 0; width: 2px;
+      background: linear-gradient(180deg, var(--accent), var(--accent2));
+      transform: scaleY(0); transform-origin: top;
+      transition: transform 0.35s;
+    }
+    .talk-item:hover { background: var(--panel); }
+    .talk-item:hover::before { transform: scaleY(1); }
+    .talk-photo-wrap {
+      overflow: hidden;
+      background: var(--navy3);
+      min-height: 190px;
+    }
+    .talk-photo {
+      width: 100%; height: 100%; min-height: 190px;
+      object-fit: cover; object-position: top center;
+      display: block;
+      filter: grayscale(20%);
+      transition: filter 0.4s, transform 0.4s;
+    }
+    .talk-item:hover .talk-photo { filter: grayscale(0%); transform: scale(1.03); }
+    .talk-content { padding: 32px 36px; display: flex; flex-direction: column; }
+    .talk-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
+    .talk-year {
+      font-family: var(--mono); font-size: 10px;
+      letter-spacing: 0.14em; color: var(--accent);
+      border: 1px solid rgba(42,255,210,0.25);
+      background: rgba(42,255,210,0.04);
+      padding: 3px 9px;
+    }
+    .talk-role {
+      font-family: var(--mono); font-size: 10px;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--muted);
+    }
+    .talk-event {
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 0.06em; color: var(--ice2);
+      margin-bottom: 10px;
+    }
+    .talk-title {
+      font-family: var(--sans); font-size: 18px; font-weight: 700;
+      color: var(--white); letter-spacing: -0.01em;
+      margin-bottom: 12px; line-height: 1.2;
+    }
+    .talk-desc {
+      font-family: var(--mono); font-size: 11px;
+      line-height: 1.9; color: var(--ice2);
+    }
+    @media (max-width: 900px) {
+      .talk-item { grid-template-columns: 1fr; }
+      .talk-photo-wrap { min-height: 200px; }
+      .talk-photo { min-height: 200px; }
+      .talk-content { padding: 24px 20px; }
+    }
+
     /* SCROLL REVEAL */
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity: 1; transform: none; }
@@ -820,6 +896,7 @@
       <li><a href="#services">Services</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#principal">Leadership</a></li>
+      <li><a href="#talks">Speaking</a></li>
       <li><a href="#portfolio">Case Studies</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -1113,7 +1190,7 @@
       <!-- MEDIA COVERAGE -->
       <div class="media-feature reveal">
         <div class="media-feature-header">
-          <div class="section-label">In the Media</div>
+          <div class="section-label">Aaron in the Media</div>
         </div>
         <div class="media-list">
 
@@ -1198,6 +1275,184 @@
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- TALKS / SPEAKING -->
+  <section id="talks">
+    <div class="section-inner">
+      <div class="section-label">Conferences &amp; Speaking</div>
+      <h2>On the Global <em>Stage</em></h2>
+      <p class="section-desc">Aaron is a sought-after voice at Asia's most prominent cybersecurity, AI, and digital policy forums — shaping conversations that matter at the highest levels of industry and government.</p>
+
+      <div class="talks-list reveal">
+
+        <div class="talk-item">
+          <div class="talk-photo-wrap">
+            <img src="talk-hkdca-human-risk-2025.jpg" alt="Data Centre Asia Hong Kong 2025 — Human Risk" class="talk-photo">
+          </div>
+          <div class="talk-content">
+            <div class="talk-meta">
+              <span class="talk-year">July 2025</span>
+              <span class="talk-role">Featured Speaker</span>
+            </div>
+            <div class="talk-event">Data Centre Asia — Hong Kong (Inaugural Edition) · AsiaWorld-Expo</div>
+            <div class="talk-title">Human Risk in Data Centre Operations</div>
+            <div class="talk-desc">Closing out the inaugural Data Centre Asia conference in Hong Kong, Aaron brought urgent attention to the most overlooked vulnerability in modern infrastructure: people. As data centres become smarter, more sustainable, and increasingly AI-driven, he examined how human behaviour — in design, operations, and governance — remains the critical risk layer that technology alone cannot solve.</div>
+          </div>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-photo-wrap">
+            <img src="talk-hkdca-ai-trust-2025.jpg" alt="Data Centre Asia Hong Kong 2025 — AI Trust Panel" class="talk-photo">
+          </div>
+          <div class="talk-content">
+            <div class="talk-meta">
+              <span class="talk-year">July 2025</span>
+              <span class="talk-role">Panelist</span>
+            </div>
+            <div class="talk-event">Data Centre Asia — Hong Kong · AsiaWorld-Expo</div>
+            <div class="talk-title">Trust in AI, Risk, and Security</div>
+            <div class="talk-desc">As AI systems grow more autonomous and embedded in critical infrastructure, Aaron joined a senior panel to examine the governance architectures, risk frameworks, and security protocols required to deploy AI responsibly in high-stakes data centre environments — and what trust must look like at scale.</div>
+          </div>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-photo-wrap">
+            <img src="talk-cyberdsa-2025.jpg" alt="CyberDSA 2025 Kuala Lumpur" class="talk-photo">
+          </div>
+          <div class="talk-content">
+            <div class="talk-meta">
+              <span class="talk-year">Sep / Oct 2025</span>
+              <span class="talk-role">Speaker</span>
+            </div>
+            <div class="talk-event">CyberDSA 2025 · MITEC, Kuala Lumpur</div>
+            <div class="talk-title">AI Adversaries: Weaponising Generative AI</div>
+            <div class="talk-desc">At one of Asia's premier cybersecurity and defence technology conferences — drawing over 8,000 professionals from 45 countries — Aaron explored how malicious actors are weaponising generative AI across the attack chain: from AI-driven phishing and deepfakes to automated red-teaming and adversarial machine learning. He challenged defenders to rethink their resilience playbooks entirely for the age of synthetic threats.</div>
+          </div>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-photo-wrap">
+            <img src="talk-csw-asia-2025.jpg" alt="Cyber Security World Asia Singapore 2025" class="talk-photo">
+          </div>
+          <div class="talk-content">
+            <div class="talk-meta">
+              <span class="talk-year">Oct 2025</span>
+              <span class="talk-role">Panel Moderator</span>
+            </div>
+            <div class="talk-event">Cyber Security World Asia 2025 · Marina Bay Sands, Singapore</div>
+            <div class="talk-title">Next-Generation Threat Hunting: Leveraging AI and Automation for Proactive Defence</div>
+            <div class="talk-desc">Moderating a high-level panel at Singapore's premier cybersecurity gathering — part of Singapore Technology Week — Aaron guided expert dialogue on the future of proactive security: how organisations can move decisively beyond reactive postures, harnessing AI and automation to identify, anticipate, and neutralise threats before they escalate into incidents.</div>
+          </div>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-photo-wrap">
+            <img src="talk-govware-sicw-2025.jpg" alt="GovWare SICW Arctic Security 2025" class="talk-photo">
+          </div>
+          <div class="talk-content">
+            <div class="talk-meta">
+              <span class="talk-year">Oct 2025</span>
+              <span class="talk-role">Panelist</span>
+            </div>
+            <div class="talk-event">GovWare / Singapore International Cyber Week × Arctic Security Ltd · Embassy of Finland, Singapore</div>
+            <div class="talk-title">Solving Emerging Cyber Problems Together</div>
+            <div class="talk-desc">At an exclusive security networking reception co-hosted by His Excellency Juha Markkanen, Ambassador of Finland to Singapore, Aaron joined an elite gathering of international cybersecurity leaders at the Embassy of Finland. The session brought together practitioners and policymakers from across the globe to address the most pressing and complex emerging challenges in the cyber landscape — in the spirit of open, high-trust collaboration.</div>
+          </div>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-photo-wrap">
+            <img src="talk-world-ai-show-kl-2025.jpg" alt="World AI Show Kuala Lumpur 2025" class="talk-photo">
+          </div>
+          <div class="talk-content">
+            <div class="talk-meta">
+              <span class="talk-year">Oct 2025</span>
+              <span class="talk-role">Panelist</span>
+            </div>
+            <div class="talk-event">World AI Show Malaysia 2025 · DoubleTree by Hilton, Kuala Lumpur</div>
+            <div class="talk-title">Adaptive Defense: AI's Growing Impact on Cyber Resilience</div>
+            <div class="talk-desc">Sharing the stage with senior AI and cybersecurity leaders from across Asia at one of the region's most prestigious AI conferences — supported by Malaysia's MDEC and CyberSecurity Malaysia — Aaron joined a powerful panel examining how adaptive, AI-driven defence frameworks are fundamentally reshaping the way organisations build and sustain cyber resilience against increasingly autonomous adversaries.</div>
+          </div>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-photo-wrap">
+            <img src="talk-smart-nation-expo-kl-2025.jpg" alt="Smart Nation Expo Kuala Lumpur 2025" class="talk-photo">
+          </div>
+          <div class="talk-content">
+            <div class="talk-meta">
+              <span class="talk-year">Nov 2025</span>
+              <span class="talk-role">Panel Speaker</span>
+            </div>
+            <div class="talk-event">Smart Nation Expo 2025 · MITEC, Kuala Lumpur</div>
+            <div class="talk-title">Strengthening Malaysia's Digital Backbone: Cyber Resilience, Infrastructure &amp; Regional Collaboration</div>
+            <div class="talk-desc">At Southeast Asia's premier digital transformation exhibition — drawing over 21,000 industry professionals and 600 exhibiting brands — Aaron participated in the Digital Economy Leaders' Discussion, addressing how nations can fortify their digital infrastructure, build cross-border cyber resilience, and collaborate regionally to protect a rapidly expanding digital economy valued at over £1 trillion by 2030.</div>
+          </div>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-photo-wrap">
+            <img src="talk-ai-asia-fellowship-2025.jpg" alt="AI for Asia Fellowship 2025" class="talk-photo">
+          </div>
+          <div class="talk-content">
+            <div class="talk-meta">
+              <span class="talk-year">2025</span>
+              <span class="talk-role">Speaker</span>
+            </div>
+            <div class="talk-event">AI for Asia Fellowship · Siklab &amp; National Youth Council Singapore</div>
+            <div class="talk-title">AI Risks &amp; Opportunities: Navigating the Dual Edge</div>
+            <div class="talk-desc">Invited to speak as part of the AI for Asia Fellowship — a programme cultivating the next generation of Asian AI leaders through Siklab and the National Youth Council of Singapore — Aaron delivered a nuanced exploration of AI's dual nature: its transformative potential to reshape economies and societies, alongside the emergent risks that demand clear-eyed governance, strategic foresight, and human-centred design.</div>
+          </div>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-photo-wrap">
+            <img src="talk-ite-west-2026.jpg" alt="ITE West FutureSmart 2026" class="talk-photo">
+          </div>
+          <div class="talk-content">
+            <div class="talk-meta">
+              <span class="talk-year">2026</span>
+              <span class="talk-role">Speaker</span>
+            </div>
+            <div class="talk-event">ITE West — FutureSmart 2026</div>
+            <div class="talk-title">Navigating AI &amp; Digital Safety with Confidence</div>
+            <div class="talk-desc">At ITE West's FutureSmart conference, Aaron brought grounded, practical insight to an audience of students and educators navigating a world being rapidly reshaped by AI. His session addressed how young people can develop digital safety mindsets, build critical thinking around technology, and step into the future with confidence rather than anxiety — equipping the next generation to be informed, resilient digital citizens.</div>
+          </div>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-photo-wrap">
+            <img src="talk-cybersec-asia-thailand-2026.jpg" alt="CybersecAsia Thailand International Cyber Week 2026" class="talk-photo">
+          </div>
+          <div class="talk-content">
+            <div class="talk-meta">
+              <span class="talk-year">2026</span>
+              <span class="talk-role">Speaker</span>
+            </div>
+            <div class="talk-event">CybersecAsia × Thailand International Cyber Week 2026</div>
+            <div class="talk-title">Futureproofing Cybersecurity in the Age of Autonomous AI</div>
+            <div class="talk-desc">At the convergence of CybersecAsia and Thailand's International Cyber Week, Aaron addressed the defining strategic challenge of our era: building cybersecurity architectures that can withstand the next wave of AI-enabled threats. He explored how defenders must evolve their posture, playbooks, and partnerships to stay ahead of adversaries already deploying autonomous AI offensively in the field.</div>
+          </div>
+        </div>
+
+        <div class="talk-item">
+          <div class="talk-photo-wrap">
+            <img src="talk-exclusive-networks-2026.jpg" alt="Exclusive Networks Singapore Partner Appreciation Event 2026" class="talk-photo">
+          </div>
+          <div class="talk-content">
+            <div class="talk-meta">
+              <span class="talk-year">2026</span>
+              <span class="talk-role">Featured Speaker</span>
+            </div>
+            <div class="talk-event">Exclusive Networks Singapore Partner Appreciation Event 2026</div>
+            <div class="talk-title">The Future of Cybersecurity: Quantum Security &amp; AI/LLM Security</div>
+            <div class="talk-desc">Invited to address one of Singapore's most influential cybersecurity distribution communities, Aaron examined the frontier threats that will define the coming decade. From the urgency of post-quantum cryptography and the security implications of large language models, to the convergence of AI with both offensive and defensive capabilities — the session delivered a clear-eyed look at what organisations must prepare for now, before these threats become mainstream.</div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
