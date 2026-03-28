@@ -1000,23 +1000,124 @@
     }
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
 
-    @media (max-width: 900px) {
-      nav { padding: 0 24px; }
-      .nav-links { display: none; }
-      #hero { padding: 0 24px; }
+    /* HAMBURGER NAV */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column; justify-content: center; gap: 5px;
+      background: none; border: none; cursor: pointer;
+      padding: 8px; margin-left: 12px;
+    }
+    .nav-hamburger span {
+      display: block; width: 22px; height: 1.5px;
+      background: var(--ice2);
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    /* TOUCH DEVICES — disable custom cursor */
+    @media (hover: none) {
+      body { cursor: auto; }
+      .cursor { display: none; }
+      a, button { cursor: pointer; }
+    }
+
+    /* TABLET (max 1100px) — tighten wide padding */
+    @media (max-width: 1100px) {
+      nav { padding: 0 32px; }
+      .section-inner { padding: 100px 40px; }
+      footer { padding: 40px 40px; }
+      .hero-stats { right: 40px; }
+      #hero { padding: 0 40px; }
+    }
+
+    /* MOBILE (max 768px) */
+    @media (max-width: 768px) {
+      /* NAV */
+      nav { padding: 0 20px; }
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 72px; left: 0; right: 0;
+        background: rgba(4,8,15,0.97);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 8px 0 24px;
+        gap: 0;
+        list-style: none;
+        border-bottom: 1px solid var(--edge);
+        z-index: 99;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { border-bottom: 1px solid rgba(26,45,80,0.6); }
+      .nav-links a {
+        display: block; padding: 16px 24px;
+        font-size: 13px; letter-spacing: 0.1em;
+        color: var(--ice2);
+      }
+      .nav-links a::after { display: none; }
+      .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+
+      /* HERO */
+      #hero { padding: 100px 20px 60px; min-height: 100svh; align-items: flex-start; }
       .hero-stats { display: none; }
       .hero-corner { display: none; }
-      .section-inner { padding: 80px 24px; }
+      .hero-content { max-width: 100%; }
+      .hero-actions { flex-direction: column; align-items: stretch; gap: 12px; }
+      .btn-primary, .btn-ghost { text-align: center; padding: 16px 24px; }
+
+      /* SECTIONS */
+      .section-inner { padding: 64px 20px; }
+
+      /* SERVICES */
       .services-grid { grid-template-columns: 1fr; }
-      .about-grid { grid-template-columns: 1fr; gap: 48px; }
-      .portfolio-header { flex-direction: column; align-items: flex-start; gap: 24px; }
-      .ventures-header { flex-direction: column; align-items: flex-start; gap: 24px; }
-      .ventures-grid { grid-template-columns: 1fr; }
-      .venture-card.featured { grid-template-columns: 1fr; gap: 32px; }
-      .case-item { grid-template-columns: 1fr; gap: 12px; }
+      .service-card { padding: 32px 28px; }
+
+      /* ABOUT */
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-panel { padding: 28px; }
+
+      /* PRINCIPAL / LEADERSHIP */
+      .principal-grid { grid-template-columns: 1fr; gap: 36px; }
+      .principal-photo-wrap { max-width: 320px; }
+
+      /* CASE STUDIES */
+      .portfolio-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+      .case-item {
+        grid-template-columns: 1fr;
+        gap: 10px; padding: 28px 20px;
+      }
+      .case-num { display: none; }
       .case-industry { text-align: left; }
-      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
-      footer { flex-direction: column; gap: 20px; text-align: center; }
+      .case-arrow { display: none; }
+
+      /* VENTURES */
+      .ventures-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+      .ventures-sub-label { flex-direction: column; gap: 6px; align-items: flex-start; }
+      .ventures-grid { grid-template-columns: 1fr; }
+      .venture-card { padding: 28px 20px; }
+      .venture-card.featured { grid-template-columns: 1fr; gap: 28px; }
+      .venture-logo-svg { width: 64px; height: 64px; }
+      .venture-logo-img { max-width: 140px; }
+
+      /* CONTACT */
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .form-submit { align-self: stretch; text-align: center; clip-path: none; }
+
+      /* FOOTER */
+      footer { flex-direction: column; gap: 16px; text-align: center; padding: 32px 20px; }
+      .footer-links { flex-wrap: wrap; justify-content: center; gap: 20px; }
+    }
+
+    /* SMALL MOBILE (max 480px) */
+    @media (max-width: 480px) {
+      .section-inner { padding: 56px 16px; }
+      .venture-card { padding: 24px 16px; }
+      .talk-content { padding: 20px 16px; }
+      .media-item { padding: 20px 16px; }
+      .case-item { padding: 24px 16px; }
     }
   </style>
 </head>
@@ -1045,7 +1146,7 @@
       </svg>
       <span class="nav-logo-text">Hesed<span> & </span>Emet</span>
     </div>
-    <ul class="nav-links">
+    <ul class="nav-links" id="navLinks">
       <li><a href="#services">Services</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#principal">Leadership</a></li>
@@ -1055,6 +1156,9 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
     <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Engage Us</button>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <!-- HERO -->
@@ -1984,6 +2088,20 @@
       sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.id; });
       navLinks.forEach(a => {
         a.style.color = a.getAttribute('href') === '#' + current ? 'var(--accent)' : '';
+      });
+    });
+
+    // HAMBURGER MENU
+    const hamburger = document.getElementById('navHamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navLinks.classList.remove('open');
       });
     });
 
