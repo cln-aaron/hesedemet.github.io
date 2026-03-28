@@ -610,6 +610,22 @@
       color: var(--ice2); border: 1px solid var(--edge);
       padding: 5px 12px;
     }
+    .ventures-subsection { margin-bottom: 64px; }
+    .ventures-subsection:last-child { margin-bottom: 0; }
+    .ventures-sub-label {
+      display: flex; align-items: baseline; gap: 20px;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--edge);
+    }
+    .ventures-sub-title {
+      font-family: var(--sans); font-size: 18px; font-weight: 700;
+      color: var(--white); letter-spacing: -0.01em; white-space: nowrap;
+    }
+    .ventures-sub-desc {
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 0.08em; color: var(--muted);
+    }
     .venture-partner-slot {
       display: flex; flex-direction: column;
       justify-content: center; align-items: center;
@@ -1024,7 +1040,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#principal">Leadership</a></li>
       <li><a href="#talks">Speaking</a></li>
-      <li><a href="#ventures">Ventures</a></li>
+      <li><a href="#ventures">Portfolio</a></li>
       <li><a href="#portfolio">Case Studies</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -1593,51 +1609,64 @@
     <div class="section-inner">
       <div class="ventures-header reveal">
         <div>
-          <div class="section-label">Technology Ventures</div>
-          <h2>Products We<br><em>Own &amp; Back</em></h2>
+          <div class="section-label">Technology Portfolio</div>
+          <h2>Our Technology<br><em>Ecosystem</em></h2>
         </div>
-        <p class="section-desc" style="max-width:400px; margin:0;">We don't just advise on technology — we build and invest in it. This is where we put our conviction on the line.</p>
+        <p class="section-desc" style="max-width:420px; margin:0;">We advise on technology, invest in it, and carry the products we genuinely stand behind — both those we own and those we partner with.</p>
       </div>
 
-      <div class="ventures-grid reveal">
-
-        <!-- VIRAGE — OUR PRODUCT -->
-        <div class="venture-card featured">
-          <div class="venture-logo-wrap">
-            <div class="venture-badge">Our Product</div>
-            <img src="https://virage.app/assets/title.png" alt="Virage" class="venture-logo-img">
-            <a href="https://www.virage.app" target="_blank" rel="noopener" class="venture-link">
-              Visit virage.app <span>→</span>
-            </a>
-          </div>
-          <div class="venture-body">
-            <div class="venture-name">Virage<span style="color:var(--accent);">.</span></div>
-            <div class="venture-tagline">AI-Powered Human Risk Training & Simulation</div>
-            <div class="venture-desc">
-              <p>Virage began as the final-year project of an exceptional team of students from Nanyang Polytechnic — a group who saw the growing threat of voice and email scams and built something genuinely innovative in response. When we encountered their work, we didn't just admire it. We acquired it, invested heavily in its development, and brought it into our practice — because we believed in both the product and the people behind it.</p>
-              <p>At its core, Virage is a phishing and vishing simulation platform that places the human layer — the most exploited and least defended surface in any organisation — at the centre of cyber resilience. The platform generates realistic, multilingual, AI-driven simulations of email phishing and voice scam scenarios, modelled on real-world attack patterns and tuned to the way people actually communicate in Singapore and across the region.</p>
-              <p>Organisations using Virage don't just train their people — they measure vulnerability, track improvement over time, and build a culture where scepticism is a reflex, not an afterthought. It is the operational expression of everything we believe about human risk: that awareness alone is insufficient, and that the only way to know whether your people are ready is to test them before the adversary does.</p>
+      <!-- SUBSECTION: OUR PRODUCTS -->
+      <div class="ventures-subsection reveal">
+        <div class="ventures-sub-label">
+          <span class="ventures-sub-title">Our Products</span>
+          <span class="ventures-sub-desc">Technology we own, operate, and have invested in directly.</span>
+        </div>
+        <div class="ventures-grid">
+          <div class="venture-card featured">
+            <div class="venture-logo-wrap">
+              <div class="venture-badge">Owned by H&amp;E</div>
+              <img src="https://virage.app/assets/title.png" alt="Virage" class="venture-logo-img">
+              <a href="https://www.virage.app" target="_blank" rel="noopener" class="venture-link">
+                Visit virage.app <span>→</span>
+              </a>
             </div>
-            <div class="venture-caps">
-              <span class="venture-cap">Vishing Simulation</span>
-              <span class="venture-cap">Phishing Simulation</span>
-              <span class="venture-cap">Behavioural Analytics</span>
-              <span class="venture-cap">Multilingual AI Scenarios</span>
-              <span class="venture-cap">Vulnerability Dashboards</span>
-              <span class="venture-cap">Human Risk Metrics</span>
+            <div class="venture-body">
+              <div class="venture-name">Virage<span style="color:var(--accent);">.</span></div>
+              <div class="venture-tagline">AI-Powered Human Risk Training & Simulation</div>
+              <div class="venture-desc">
+                <p>Virage began as the final-year project of an exceptional team of students from Nanyang Polytechnic — a group who saw the growing threat of voice and email scams and built something genuinely innovative in response. When we encountered their work, we didn't just admire it. We acquired it, invested heavily in its development, and brought it into our practice — because we believed in both the product and the people behind it.</p>
+                <p>At its core, Virage is a phishing and vishing simulation platform that places the human layer — the most exploited and least defended surface in any organisation — at the centre of cyber resilience. The platform generates realistic, multilingual, AI-driven simulations of email phishing and voice scam scenarios, modelled on real-world attack patterns and tuned to the way people actually communicate in Singapore and across the region.</p>
+                <p>Organisations using Virage don't just train their people — they measure vulnerability, track improvement over time, and build a culture where scepticism is a reflex, not an afterthought. It is the operational expression of everything we believe about human risk: that awareness alone is insufficient, and that the only way to know whether your people are ready is to test them before the adversary does.</p>
+              </div>
+              <div class="venture-caps">
+                <span class="venture-cap">Vishing Simulation</span>
+                <span class="venture-cap">Phishing Simulation</span>
+                <span class="venture-cap">Behavioural Analytics</span>
+                <span class="venture-cap">Multilingual AI Scenarios</span>
+                <span class="venture-cap">Vulnerability Dashboards</span>
+                <span class="venture-cap">Human Risk Metrics</span>
+              </div>
             </div>
           </div>
         </div>
-
-        <!-- PARTNER SLOTS — COMING SOON -->
-        <div class="venture-card venture-partner-slot">
-          <div class="venture-partner-label">Technology Partner<br>Coming Soon</div>
-        </div>
-        <div class="venture-card venture-partner-slot">
-          <div class="venture-partner-label">Technology Partner<br>Coming Soon</div>
-        </div>
-
       </div>
+
+      <!-- SUBSECTION: TECHNOLOGY PARTNERS -->
+      <div class="ventures-subsection reveal">
+        <div class="ventures-sub-label">
+          <span class="ventures-sub-title">Technology Partners</span>
+          <span class="ventures-sub-desc">Carefully selected products we carry, recommend, and deploy for our clients.</span>
+        </div>
+        <div class="ventures-grid">
+          <div class="venture-card venture-partner-slot">
+            <div class="venture-partner-label">Partner coming soon</div>
+          </div>
+          <div class="venture-card venture-partner-slot">
+            <div class="venture-partner-label">Partner coming soon</div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
