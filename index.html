@@ -701,6 +701,18 @@
       .principal-grid { grid-template-columns: 1fr; gap: 40px; }
     }
 
+    .media-links { margin-top: 16px; display: flex; flex-direction: column; gap: 10px; }
+    .media-link {
+      display: flex; align-items: baseline; gap: 10px;
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em;
+      color: var(--accent); text-decoration: none;
+      transition: color 0.2s, gap 0.2s;
+    }
+    .media-link::before { content: '→'; color: var(--muted); flex-shrink: 0; transition: color 0.2s; }
+    .media-link:hover { color: var(--white); gap: 14px; }
+    .media-link:hover::before { color: var(--accent); }
+    .media-link-placeholder { color: var(--muted); font-style: italic; }
+
     /* SCROLL REVEAL */
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity: 1; transform: none; }
@@ -992,9 +1004,9 @@
 
         <!-- Bio -->
         <div class="principal-bio">
-          <p>Aaron Ang is a practitioner-turned-advisor whose career has been shaped at the highest levels of Singapore's national cybersecurity landscape. A former officer at the <strong>Cyber Security Agency of Singapore (CSA)</strong>, he designed and led landmark national programmes — including the inaugural Advanced Youth Cyber Exploration Programme (AYCEP) Capture-The-Flag — pairing technical red-team challenges with simulated incident response and crisis communications exercises presented to mock C-suite panels.</p>
-          <p>He operates at the intersection of <strong>AI, cybersecurity, and human behaviour</strong>, advising organisations on translating emerging technologies into strategic clarity while strengthening resilience against evolving cyber and human risks. His work spans executive advisory, curriculum design, governance frameworks, and board-level capability building — grounded in the conviction that technology is only as strong as the people who govern it.</p>
-          <p>Aaron holds the <strong>EC-Council Certified CISO (C|CISO)</strong> designation and is an accredited EC-Council Certified Instructor (CEI) — one of a select group in the region authorised to design and deliver CISO-level training programmes across industries.</p>
+          <p>Aaron Ang is a senior cybersecurity and AI strategist whose career has operated at the intersection of <strong>national policy, digital resilience, and emerging technology</strong>. With a formative tenure at the Cyber Security Agency of Singapore (CSA), he has shaped initiatives that function at national scale — contributing to Singapore's cybersecurity posture, informing the direction of workforce and talent development, and building the capability of both public institutions and private enterprises to navigate an increasingly complex threat environment.</p>
+          <p>He brings a rare ability to work across the full spectrum: from <strong>identifying strategic market opportunities in emerging technology</strong> to architecting the governance frameworks and human systems needed to deploy them responsibly. His work spans national programmes, cross-sector partnerships, and executive advisory — always oriented toward the question of how technology can be adopted more effectively, and with greater confidence, by the people and organisations that depend on it.</p>
+          <p>Aaron is a <strong>trusted voice in Singapore's cybersecurity community</strong> — regularly called upon by national and regional media to provide expert commentary on major incidents, evolving threats, and the policy implications of an increasingly digital world. His perspective bridges practitioner depth with strategic clarity, making him a sought-after reference point for institutions, boards, and journalists alike.</p>
 
           <div class="principal-creds">
 
@@ -1029,14 +1041,22 @@
             <div class="cred-item">
               <div class="cred-icon">
                 <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="4" y="7" width="20" height="14" rx="1" stroke="#2AFFD2" stroke-width="1.5"/>
-                  <path d="M9 13h10M9 17h6" stroke="#00B8F5" stroke-width="1.5" stroke-linecap="square"/>
+                  <rect x="3" y="5" width="22" height="18" rx="1" stroke="#2AFFD2" stroke-width="1.5"/>
+                  <path d="M3 10h22" stroke="#2AFFD2" stroke-width="1.5"/>
+                  <circle cx="7" cy="7.5" r="1" fill="#00B8F5"/>
+                  <circle cx="11" cy="7.5" r="1" fill="#00B8F5"/>
+                  <path d="M8 15h12M8 19h8" stroke="#00B8F5" stroke-width="1.5" stroke-linecap="square"/>
                 </svg>
               </div>
               <div>
-                <div class="cred-label">Certification</div>
-                <div class="cred-title">EC-Council Certified CISO (C|CISO) &amp; Accredited Trainer</div>
-                <div class="cred-body">One of a select group of EC-Council Certified Instructors (CEI) in the region — qualified to assess, advise, and train Chief Information Security Officers across industries.</div>
+                <div class="cred-label">Media &amp; Public Commentary</div>
+                <div class="cred-title">Voice on Singapore's Cybersecurity Landscape</div>
+                <div class="cred-body">A sought-after expert commentator for national and regional media — providing insight on major cybersecurity incidents, data breaches, AI-related threats, and the policy dimensions of digital security affecting Singapore and the broader Asia-Pacific region.</div>
+                <div class="media-links">
+                  <a href="#" class="media-link media-link-placeholder">Add media interview link here</a>
+                  <a href="#" class="media-link media-link-placeholder">Add media interview link here</a>
+                  <a href="#" class="media-link media-link-placeholder">Add media interview link here</a>
+                </div>
               </div>
             </div>
 
