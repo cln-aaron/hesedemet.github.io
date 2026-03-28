@@ -510,6 +510,119 @@
     }
     .case-item:hover .case-arrow { opacity: 1; transform: translateY(-50%) translateX(0); }
 
+    /* VENTURES */
+    #ventures { background: var(--navy); position: relative; }
+    #ventures::before {
+      content: '';
+      position: absolute; left: 0; top: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--edge), transparent);
+    }
+    .ventures-header {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      margin-bottom: 64px; gap: 40px;
+    }
+    .ventures-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--edge);
+      border: 1px solid var(--edge);
+    }
+    .venture-card {
+      background: var(--navy2);
+      padding: 48px;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.2s;
+    }
+    .venture-card::before {
+      content: '';
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--accent), var(--accent2));
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform 0.35s;
+    }
+    .venture-card:hover { background: var(--panel); }
+    .venture-card:hover::before { transform: scaleY(1); }
+    .venture-card.featured {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .venture-badge {
+      display: inline-block;
+      font-family: var(--mono); font-size: 9px;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--navy); background: var(--accent);
+      padding: 4px 10px; margin-bottom: 28px;
+    }
+    .venture-logo-wrap {
+      display: flex; flex-direction: column;
+      align-items: flex-start; gap: 20px;
+    }
+    .venture-logo-img {
+      max-width: 180px; width: 100%;
+      height: auto; display: block;
+    }
+    .venture-logo-placeholder {
+      width: 100%; max-width: 180px;
+      aspect-ratio: 3/1;
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid var(--edge);
+      color: var(--accent);
+    }
+    .venture-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--accent); text-decoration: none;
+      margin-top: 8px;
+      transition: gap 0.2s;
+    }
+    .venture-link:hover { gap: 14px; }
+    .venture-name {
+      font-family: var(--sans); font-size: 32px; font-weight: 800;
+      color: var(--white); letter-spacing: -0.02em; line-height: 1;
+      margin-bottom: 6px;
+    }
+    .venture-tagline {
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--accent2); margin-bottom: 24px;
+    }
+    .venture-desc {
+      font-family: var(--mono); font-size: 13px;
+      line-height: 2; color: var(--ice2);
+    }
+    .venture-desc p { margin-bottom: 16px; }
+    .venture-desc p:last-child { margin-bottom: 0; }
+    .venture-caps {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      margin-top: 28px;
+    }
+    .venture-cap {
+      font-family: var(--mono); font-size: 10px;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--ice2); border: 1px solid var(--edge);
+      padding: 5px 12px;
+    }
+    .venture-partner-slot {
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      min-height: 200px; text-align: center;
+      border: 1px dashed var(--edge);
+      background: transparent;
+    }
+    .venture-partner-label {
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--muted);
+    }
+
     /* CONTACT */
     #contact { background: var(--navy); }
     #contact::before {
@@ -871,6 +984,9 @@
       .services-grid { grid-template-columns: 1fr; }
       .about-grid { grid-template-columns: 1fr; gap: 48px; }
       .portfolio-header { flex-direction: column; align-items: flex-start; gap: 24px; }
+      .ventures-header { flex-direction: column; align-items: flex-start; gap: 24px; }
+      .ventures-grid { grid-template-columns: 1fr; }
+      .venture-card.featured { grid-template-columns: 1fr; gap: 32px; }
       .case-item { grid-template-columns: 1fr; gap: 12px; }
       .case-industry { text-align: left; }
       .contact-grid { grid-template-columns: 1fr; gap: 48px; }
@@ -908,6 +1024,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#principal">Leadership</a></li>
       <li><a href="#talks">Speaking</a></li>
+      <li><a href="#ventures">Ventures</a></li>
       <li><a href="#portfolio">Case Studies</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -1465,6 +1582,65 @@
             <div class="talk-title">The Future of Cybersecurity: Quantum Security &amp; AI/LLM Security</div>
             <div class="talk-desc">Invited to address one of Singapore's most influential cybersecurity distribution communities, Aaron examined the frontier threats that will define the coming decade. From the urgency of post-quantum cryptography and the security implications of large language models, to the convergence of AI with both offensive and defensive capabilities — the session delivered a clear-eyed look at what organisations must prepare for now, before these threats become mainstream.</div>
           </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- VENTURES -->
+  <section id="ventures">
+    <div class="section-inner">
+      <div class="ventures-header reveal">
+        <div>
+          <div class="section-label">Technology Ventures</div>
+          <h2>Products We<br><em>Own &amp; Back</em></h2>
+        </div>
+        <p class="section-desc" style="max-width:400px; margin:0;">We don't just advise on technology — we build and invest in it. This is where we put our conviction on the line.</p>
+      </div>
+
+      <div class="ventures-grid reveal">
+
+        <!-- VIRAGE — OUR PRODUCT -->
+        <div class="venture-card featured">
+          <div class="venture-logo-wrap">
+            <div class="venture-badge">Our Product</div>
+            <!-- Replace venture-logo-placeholder with an <img> once virage-logo.png is uploaded -->
+            <div class="venture-logo-placeholder">
+              <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="120">
+                <text x="0" y="32" font-family="'Syne', sans-serif" font-weight="800" font-size="34" fill="#2AFFD2" letter-spacing="-1">Virage</text>
+                <circle cx="114" cy="10" r="5" fill="#00B8F5" opacity="0.7"/>
+              </svg>
+            </div>
+            <a href="https://www.virage.app" target="_blank" rel="noopener" class="venture-link">
+              Visit virage.app <span>→</span>
+            </a>
+          </div>
+          <div class="venture-body">
+            <div class="venture-name">Virage<span style="color:var(--accent);">.</span></div>
+            <div class="venture-tagline">AI-Powered Human Risk Training & Simulation</div>
+            <div class="venture-desc">
+              <p>Virage began as the final-year project of an exceptional team of students from Nanyang Polytechnic — a group who saw the growing threat of voice and email scams and built something genuinely innovative in response. When we encountered their work, we didn't just admire it. We acquired it, invested heavily in its development, and brought it into our practice — because we believed in both the product and the people behind it.</p>
+              <p>At its core, Virage is a phishing and vishing simulation platform that places the human layer — the most exploited and least defended surface in any organisation — at the centre of cyber resilience. The platform generates realistic, multilingual, AI-driven simulations of email phishing and voice scam scenarios, modelled on real-world attack patterns and tuned to the way people actually communicate in Singapore and across the region.</p>
+              <p>Organisations using Virage don't just train their people — they measure vulnerability, track improvement over time, and build a culture where scepticism is a reflex, not an afterthought. It is the operational expression of everything we believe about human risk: that awareness alone is insufficient, and that the only way to know whether your people are ready is to test them before the adversary does.</p>
+            </div>
+            <div class="venture-caps">
+              <span class="venture-cap">Vishing Simulation</span>
+              <span class="venture-cap">Phishing Simulation</span>
+              <span class="venture-cap">Behavioural Analytics</span>
+              <span class="venture-cap">Multilingual AI Scenarios</span>
+              <span class="venture-cap">Vulnerability Dashboards</span>
+              <span class="venture-cap">Human Risk Metrics</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PARTNER SLOTS — COMING SOON -->
+        <div class="venture-card venture-partner-slot">
+          <div class="venture-partner-label">Technology Partner<br>Coming Soon</div>
+        </div>
+        <div class="venture-card venture-partner-slot">
+          <div class="venture-partner-label">Technology Partner<br>Coming Soon</div>
         </div>
 
       </div>
