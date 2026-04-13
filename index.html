@@ -854,8 +854,62 @@
     }
 
     /* MEDIA SECTION */
-    .media-feature { margin-top: 64px; }
-    .media-feature-header { margin-bottom: 28px; }
+    .media-feature { margin-top: 80px; }
+    .media-hero {
+      position: relative;
+      padding: 52px 56px 48px;
+      background: var(--navy2);
+      border: 1px solid var(--edge);
+      overflow: hidden;
+      margin-bottom: 2px;
+    }
+    .media-hero::before {
+      content: '"';
+      position: absolute;
+      right: 24px; top: -60px;
+      font-family: var(--serif);
+      font-size: 360px;
+      color: var(--accent);
+      opacity: 0.05;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+    .media-hero::after {
+      content: '';
+      position: absolute; left: 0; bottom: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+    }
+    .media-hero-label {
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--accent);
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 20px;
+    }
+    .media-hero-label::before {
+      content: ''; display: inline-block;
+      width: 32px; height: 1px; background: var(--accent);
+    }
+    .media-hero-title {
+      font-family: var(--sans);
+      font-size: clamp(36px, 5vw, 60px);
+      font-weight: 800; letter-spacing: -0.02em;
+      color: var(--white); line-height: 1.0;
+      margin-bottom: 28px;
+    }
+    .media-hero-title em {
+      font-family: var(--serif);
+      font-style: italic; font-weight: 400;
+      color: var(--accent);
+    }
+    .media-hero-intro {
+      font-family: var(--mono); font-size: 14px;
+      line-height: 1.9; color: var(--ice2);
+      max-width: 580px; margin-bottom: 32px;
+    }
+    .media-hero-intro strong { color: var(--white); }
+    .media-feature-header { margin-bottom: 0; }
     .media-list { display: flex; flex-direction: column; gap: 1px; background: var(--edge); border: 1px solid var(--edge); }
     .media-item {
       background: var(--navy3);
@@ -1423,16 +1477,17 @@
 
       <!-- MEDIA COVERAGE -->
       <div class="media-feature reveal">
-        <div class="media-feature-header">
-          <div class="section-label">Aaron in the Media</div>
-          <p class="media-section-intro">When Singapore's national and regional newsrooms need authoritative commentary on cybersecurity incidents, emerging threats, or digital policy — <strong>Aaron is among the first voices they call.</strong> The quotes below are his words, as published in some of the region's most respected outlets.</p>
+        <div class="media-hero">
+          <div class="media-hero-label">Aaron in the Media</div>
+          <div class="media-hero-title">Quoted.<br>Cited. <em>On Record.</em></div>
+          <p class="media-hero-intro">With deep expertise spanning cybersecurity, AI strategy, and national digital policy, <strong>Aaron is regularly quoted by Singapore's most trusted newsrooms</strong> — called upon for authoritative perspective on the incidents and issues that shape the region's digital landscape.</p>
           <div class="media-outlets-bar">
             <span class="media-outlets-label">As quoted in</span>
             <span class="media-outlet-name">The Straits Times</span>
             <span class="media-outlet-sep">·</span>
             <span class="media-outlet-name">Channel NewsAsia</span>
             <span class="media-outlet-sep">·</span>
-            <span class="media-outlet-name">8world</span>
+            <span class="media-outlet-name">Mothership</span>
           </div>
         </div>
         <div class="media-list">
