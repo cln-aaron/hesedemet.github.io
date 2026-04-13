@@ -899,10 +899,22 @@
       color: var(--ice2); margin-bottom: 12px;
     }
     .media-quote {
-      font-family: var(--mono); font-size: 12px; line-height: 1.85;
-      color: var(--ice); font-style: italic;
-      border-left: 2px solid var(--accent);
-      padding-left: 14px; margin-bottom: 14px;
+      font-family: var(--serif); font-size: 17px; line-height: 1.7;
+      color: var(--white); font-style: italic;
+      border-left: 3px solid var(--accent);
+      padding: 12px 20px;
+      margin: 16px 0 14px;
+      background: rgba(42,255,210,0.03);
+      position: relative;
+    }
+    .media-quote::after {
+      content: '— Aaron Ang';
+      display: block;
+      margin-top: 10px;
+      font-size: 11px; font-style: normal;
+      font-family: var(--mono);
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--accent);
     }
     .media-read {
       font-family: var(--mono); font-size: 11px;
@@ -921,6 +933,38 @@
       content: '';
       position: absolute; left: 0; top: 0; right: 0; height: 1px;
       background: linear-gradient(90deg, transparent, var(--edge), transparent);
+    }
+    .talks-header {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      gap: 48px; margin-bottom: 16px;
+    }
+    .talks-header-text { flex: 1; }
+    .talks-stats-block {
+      display: flex; gap: 40px; align-items: flex-start;
+      flex-shrink: 0; padding-top: 12px;
+    }
+    .talks-stat-item { text-align: right; border-right: 1px solid var(--edge); padding-right: 20px; }
+    .talks-stat-item:last-child { border-right: none; padding-right: 0; }
+    .talks-stat-num {
+      font-family: var(--sans); font-size: 36px; font-weight: 800;
+      color: var(--white); line-height: 1;
+    }
+    .talks-stat-lbl {
+      font-family: var(--mono); font-size: 10px;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--muted); margin-top: 4px;
+    }
+    .talks-geo {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      margin-top: 24px;
+    }
+    .talks-geo span {
+      font-family: var(--mono); font-size: 11px;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--accent2);
+      border: 1px solid rgba(0,184,245,0.3);
+      background: rgba(0,184,245,0.05);
+      padding: 4px 12px;
     }
     .talks-list {
       display: flex; flex-direction: column; gap: 1px;
@@ -956,7 +1000,7 @@
     }
     .talk-item:hover .talk-photo { filter: grayscale(0%); }
     .talk-content { padding: 32px 36px; display: flex; flex-direction: column; }
-    .talk-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
+    .talk-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
     .talk-year {
       font-family: var(--mono); font-size: 11px;
       letter-spacing: 0.14em; color: var(--accent);
@@ -965,17 +1009,20 @@
       padding: 3px 9px;
     }
     .talk-role {
-      font-family: var(--mono); font-size: 11px;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--muted);
+      font-family: var(--mono); font-size: 10px;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--navy); background: var(--accent);
+      padding: 4px 10px; font-weight: 600;
     }
+    .talk-role.role-panelist { background: var(--accent2); }
+    .talk-role.role-moderator { background: #9B8BFF; }
     .talk-event {
       font-family: var(--mono); font-size: 12px;
       letter-spacing: 0.06em; color: var(--ice2);
       margin-bottom: 10px;
     }
     .talk-title {
-      font-family: var(--sans); font-size: 18px; font-weight: 700;
+      font-family: var(--sans); font-size: 20px; font-weight: 700;
       color: var(--white); letter-spacing: -0.01em;
       margin-bottom: 12px; line-height: 1.2;
     }
@@ -984,10 +1031,39 @@
       line-height: 1.9; color: var(--ice2);
     }
     @media (max-width: 900px) {
+      .talks-header { flex-direction: column; gap: 32px; }
+      .talks-stats-block { justify-content: flex-start; }
+      .talks-stat-item { text-align: left; border-right: none; border-bottom: 1px solid var(--edge); padding-right: 0; padding-bottom: 16px; }
       .talk-item { grid-template-columns: 1fr; }
       .talk-photo { width: 100%; }
       .talk-content { padding: 24px 20px; }
     }
+
+    /* MEDIA SECTION ENHANCEMENTS */
+    .media-section-intro {
+      font-family: var(--mono); font-size: 14px;
+      line-height: 1.9; color: var(--ice2);
+      max-width: 640px; margin-bottom: 28px;
+    }
+    .media-section-intro strong { color: var(--white); }
+    .media-outlets-bar {
+      display: flex; flex-wrap: wrap; align-items: center;
+      gap: 12px; margin-bottom: 40px;
+    }
+    .media-outlets-label {
+      font-family: var(--mono); font-size: 10px;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--muted);
+    }
+    .media-outlet-name {
+      font-family: var(--sans); font-size: 13px;
+      font-weight: 700; letter-spacing: 0.04em;
+      text-transform: uppercase; color: var(--white);
+      border: 1px solid var(--edge);
+      padding: 5px 14px;
+      background: var(--panel);
+    }
+    .media-outlet-sep { color: var(--edge); font-size: 18px; }
 
     /* SCROLL REVEAL */
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
@@ -1349,6 +1425,15 @@
       <div class="media-feature reveal">
         <div class="media-feature-header">
           <div class="section-label">Aaron in the Media</div>
+          <p class="media-section-intro">When Singapore's national and regional newsrooms need authoritative commentary on cybersecurity incidents, emerging threats, or digital policy — <strong>Aaron is among the first voices they call.</strong> The quotes below are his words, as published in some of the region's most respected outlets.</p>
+          <div class="media-outlets-bar">
+            <span class="media-outlets-label">As quoted in</span>
+            <span class="media-outlet-name">The Straits Times</span>
+            <span class="media-outlet-sep">·</span>
+            <span class="media-outlet-name">Channel NewsAsia</span>
+            <span class="media-outlet-sep">·</span>
+            <span class="media-outlet-name">8world</span>
+          </div>
         </div>
         <div class="media-list">
 
@@ -1439,9 +1524,33 @@
   <!-- TALKS / SPEAKING -->
   <section id="talks">
     <div class="section-inner">
-      <div class="section-label">Conferences &amp; Speaking</div>
-      <h2>On the Global <em>Stage</em></h2>
-      <p class="section-desc">Aaron is a sought-after voice at Asia's most prominent cybersecurity, AI, and digital policy forums — shaping conversations that matter at the highest levels of industry and government.</p>
+      <div class="talks-header reveal">
+        <div class="talks-header-text">
+          <div class="section-label">Conferences &amp; Speaking</div>
+          <h2>International <em>Speaker</em></h2>
+          <p class="section-desc">Aaron is a sought-after voice at Asia's most prominent cybersecurity, AI, and digital policy forums — shaping conversations that matter at the highest levels of industry and government.</p>
+          <div class="talks-geo">
+            <span>🇸🇬 Singapore</span>
+            <span>🇲🇾 Malaysia</span>
+            <span>🇭🇰 Hong Kong</span>
+            <span>🇹🇭 Thailand</span>
+          </div>
+        </div>
+        <div class="talks-stats-block">
+          <div class="talks-stat-item">
+            <div class="talks-stat-num">11+</div>
+            <div class="talks-stat-lbl">Speaking<br>Engagements</div>
+          </div>
+          <div class="talks-stat-item">
+            <div class="talks-stat-num">4</div>
+            <div class="talks-stat-lbl">Countries<br>& Regions</div>
+          </div>
+          <div class="talks-stat-item">
+            <div class="talks-stat-num">'25–26</div>
+            <div class="talks-stat-lbl">Active<br>Period</div>
+          </div>
+        </div>
+      </div>
 
       <div class="talks-list reveal">
 
@@ -1467,7 +1576,7 @@
           <div class="talk-content">
             <div class="talk-meta">
               <span class="talk-year">July 2025</span>
-              <span class="talk-role">Panelist</span>
+              <span class="talk-role role-panelist">Panelist</span>
             </div>
             <div class="talk-event">Data Centre Asia — Hong Kong · AsiaWorld-Expo</div>
             <div class="talk-title">Trust in AI, Risk, and Security</div>
@@ -1497,7 +1606,7 @@
           <div class="talk-content">
             <div class="talk-meta">
               <span class="talk-year">Oct 2025</span>
-              <span class="talk-role">Panel Moderator</span>
+              <span class="talk-role role-moderator">Panel Moderator</span>
             </div>
             <div class="talk-event">Cyber Security World Asia 2025 · Marina Bay Sands, Singapore</div>
             <div class="talk-title">Next-Generation Threat Hunting: Leveraging AI and Automation for Proactive Defence</div>
@@ -1512,7 +1621,7 @@
           <div class="talk-content">
             <div class="talk-meta">
               <span class="talk-year">Oct 2025</span>
-              <span class="talk-role">Panelist</span>
+              <span class="talk-role role-panelist">Panelist</span>
             </div>
             <div class="talk-event">GovWare / Singapore International Cyber Week × Arctic Security Ltd · Embassy of Finland, Singapore</div>
             <div class="talk-title">Solving Emerging Cyber Problems Together</div>
@@ -1527,7 +1636,7 @@
           <div class="talk-content">
             <div class="talk-meta">
               <span class="talk-year">Oct 2025</span>
-              <span class="talk-role">Panelist</span>
+              <span class="talk-role role-panelist">Panelist</span>
             </div>
             <div class="talk-event">World AI Show Malaysia 2025 · DoubleTree by Hilton, Kuala Lumpur</div>
             <div class="talk-title">Adaptive Defense: AI's Growing Impact on Cyber Resilience</div>
@@ -1542,7 +1651,7 @@
           <div class="talk-content">
             <div class="talk-meta">
               <span class="talk-year">Nov 2025</span>
-              <span class="talk-role">Panel Speaker</span>
+              <span class="talk-role role-panelist">Panel Speaker</span>
             </div>
             <div class="talk-event">Smart Nation Expo 2025 · MITEC, Kuala Lumpur</div>
             <div class="talk-title">Strengthening Malaysia's Digital Backbone: Cyber Resilience, Infrastructure &amp; Regional Collaboration</div>
