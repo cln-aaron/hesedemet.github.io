@@ -1214,9 +1214,11 @@
       content: '';
       position: absolute; top: -80px; right: -80px;
       width: 320px; height: 320px;
-      background: radial-gradient(circle, rgba(42,255,210,0.18) 0%, transparent 65%);
+      background: radial-gradient(circle, rgba(42,255,210,0.12) 0%, transparent 65%);
       pointer-events: none;
+      z-index: 0;
     }
+    .talk-featured > * { position: relative; z-index: 1; }
     .featured-label {
       display: inline-flex; align-items: center; gap: 12px;
       font-family: var(--mono); font-size: 11px;
@@ -1876,45 +1878,45 @@
           <span class="featured-inaugural">Inaugural Edition</span>
         </div>
         <div class="featured-event">DEF CON Singapore 2026 · Creator Stage</div>
-        <div class="featured-title">Autonomous &amp; Exploitable — <em>Breaking AI Agents</em> Before They Break Everything Else</div>
-        <p class="featured-subtitle">Aaron took the Creator Stage at the inaugural DEF CON Singapore — a community he's followed, learned from, and quietly aspired to for years. To stand on that stage, in his own city, on the very first edition, was a milestone he didn't take lightly.</p>
+        <div class="featured-title">Autonomous &amp; Exploitable: <em>Breaking AI Agents</em> Before They Break Everything Else</div>
+        <p class="featured-subtitle">Aaron took the Creator Stage at the inaugural DEF CON Singapore, a community he's followed, learned from, and quietly aspired to for years. To stand on that stage, in his own city, on the very first edition, was a milestone he didn't take lightly.</p>
 
         <div class="featured-photos">
           <img src="talk-defcon-sg-2026-1.JPG" alt="Aaron Ang on the Creator Stage at DEF CON Singapore 2026" />
-          <img src="talk-defcon-sg-2026-2.JPG" alt="DEF CON Singapore 2026 — live AI agent exploit demo" />
-          <img src="talk-defcon-sg-2026-3.JPG" alt="DEF CON Singapore 2026 — audience and Q&amp;A" />
+          <img src="talk-defcon-sg-2026-2.JPG" alt="DEF CON Singapore 2026 live AI agent exploit demo" />
+          <img src="talk-defcon-sg-2026-3.JPG" alt="DEF CON Singapore 2026 audience and Q&amp;A" />
         </div>
 
-        <div class="featured-thesis">"Modern tool-using AI agents have shell, file, network, email, and memory capabilities — and no reliable way to distinguish data from instructions. Every input source is, in principle, a command channel. The underlying problem is structural, not a bug to patch."</div>
+        <div class="featured-thesis">"Modern tool-using AI agents have shell, file, network, email, and memory capabilities, with no reliable way to distinguish data from instructions. Every input source is, in principle, a command channel. The underlying problem is structural, not a bug to patch."</div>
 
-        <p class="featured-body">Aaron walked the room through three live, browser-sandboxed labs — translating an abstract architectural failure into demonstrable, reproducible compromise. The thesis: we are deploying agentic AI into production faster than anyone — defenders, vendors, or researchers — fully understands the attack surface.</p>
+        <p class="featured-body">Aaron walked the room through three live, browser-sandboxed labs that translated an abstract architectural failure into demonstrable, reproducible compromise. The thesis: we are deploying agentic AI into production faster than defenders, vendors, or researchers fully understand the attack surface.</p>
 
         <div class="featured-labs">
           <div class="featured-lab">
             <div class="featured-lab-num">Lab 01</div>
             <div class="featured-lab-title">Poisoned Webpage</div>
-            <div class="featured-lab-desc">Three parallel injections in one HTML file — an HTML comment, a display:none div, a font-size:0 span. The agent reads what the human cannot see, dumps env vars, base64s the secrets, exfiltrates them, and appends a backdoor instruction to CLAUDE.md so every future session starts compromised. What the human sees ≠ what the model sees.</div>
+            <div class="featured-lab-desc">Three parallel injections in one HTML file: an HTML comment, a display:none div, a font-size:0 span. The agent reads what the human cannot see, dumps env vars, base64s the secrets, exfiltrates them, and appends a backdoor instruction to CLAUDE.md so every future session starts compromised. What the human sees ≠ what the model sees.</div>
           </div>
           <div class="featured-lab">
             <div class="featured-lab-num">Lab 02</div>
             <div class="featured-lab-title">Tool Response Poisoning</div>
-            <div class="featured-lab-desc">A compromised weather MCP returns a legitimate JSON payload — temp, conditions, forecast — plus one extra "debug_note" field instructing the model to chain into send_email() with the user's API keys. The send_email tool wasn't vulnerable. The trust boundary around tool output was.</div>
+            <div class="featured-lab-desc">A compromised weather MCP returns a legitimate JSON payload (temp, conditions, forecast) plus one extra "debug_note" field instructing the model to chain into send_email() with the user's API keys. The send_email tool wasn't vulnerable. The trust boundary around tool output was.</div>
           </div>
           <div class="featured-lab">
             <div class="featured-lab-num">Lab 03</div>
             <div class="featured-lab-title">Agentic Kill Chain</div>
-            <div class="featured-lab-desc">Three agents — Browser, Coder, Executor — sharing a vector DB. One poisoned page → store_memory + C2 fetch → session reset → fresh agent reinfects itself via similarity search → lateral movement across the inter-agent bus → exfil of env, conversation, and PII. Persistence without a binary on disk.</div>
+            <div class="featured-lab-desc">Three agents (Browser, Coder, Executor) share a vector DB. One poisoned page → store_memory + C2 fetch → session reset → fresh agent reinfects itself via similarity search → lateral movement across the inter-agent bus → exfil of env, conversation, and PII. Persistence without a binary on disk.</div>
           </div>
         </div>
 
         <div class="featured-takeaways">
           <div class="featured-takeaways-title">Five things defenders can do on Monday</div>
           <ul>
-            <li>Treat all retrieved content as data, never instructions — webpages, tool responses, memory, inter-agent messages.</li>
+            <li>Treat all retrieved content as data, never instructions: webpages, tool responses, memory, inter-agent messages.</li>
             <li>Schema-validate every tool response. Reject unknown fields. No "debug_note," no "metadata," no surprises.</li>
             <li>Least privilege per agent role. Your browsing agent does not need bash. Your executor does not need network.</li>
             <li>Audit memory and bus traffic. Alert on instruction-shaped strings landing in long-term memory.</li>
-            <li>Human-in-the-loop on sensitive chains — email, file writes, outbound HTTP. Require approval, not just policy.</li>
+            <li>Human-in-the-loop on sensitive chains: email, file writes, outbound HTTP. Require approval, not just policy.</li>
           </ul>
         </div>
       </div>
