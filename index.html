@@ -1268,11 +1268,13 @@
       grid-template-rows: 1fr 1fr;
       gap: 6px;
       height: 420px;
-      margin-bottom: 36px;
+      margin-bottom: 40px;
       position: relative; z-index: 1;
+      overflow: hidden;
     }
     .featured-photos img {
       width: 100%; height: 100%;
+      min-height: 0; min-width: 0;
       object-fit: cover; display: block;
       background: var(--navy);
       filter: grayscale(15%);
@@ -1284,9 +1286,11 @@
       font-family: var(--serif); font-size: 19px;
       line-height: 1.6; color: var(--white);
       border-left: 3px solid var(--accent);
-      padding: 14px 24px; margin: 0 0 28px;
-      background: rgba(42,255,210,0.04);
+      padding: 18px 26px; margin: 0 0 28px;
+      background: rgba(10,14,26,0.85);
       font-style: italic;
+      position: relative; z-index: 2;
+      clear: both; display: block;
     }
     .featured-body {
       font-family: var(--sans); font-size: 16px;
