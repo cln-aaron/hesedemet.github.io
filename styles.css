@@ -1718,3 +1718,44 @@ footer { flex-wrap: wrap; }
   .home-media-inner { grid-template-columns: 1fr; gap: 40px; }
   .home-media-quote { font-size: 17px; }
 }
+
+/* ─── NAV MONOGRAM TAG (Aaron's personal pages) ─────────────────── */
+.nav-tag {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 17px; height: 17px;
+  background: rgba(42,255,210,0.12);
+  border: 1px solid rgba(42,255,210,0.3);
+  border-radius: 50%;
+  font-family: var(--sans);
+  font-size: 8px; font-weight: 800;
+  color: var(--accent);
+  letter-spacing: 0;
+  vertical-align: middle;
+  margin-left: 5px;
+  line-height: 1;
+}
+
+/* ─── BUTTON ALIGNMENT FIX in Aaron home section ────────────────── */
+.home-aaron-actions {
+  align-items: center;
+}
+.home-aaron-actions .btn-ghost,
+.home-aaron-actions .linkedin-btn {
+  padding: 12px 22px;
+  margin-top: 0;
+  font-size: 12px;
+  height: auto;
+}
+
+/* ─── DEF CON PHOTO inside speaking feature card ────────────────── */
+.home-speaking-photo {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  margin-bottom: 20px;
+  filter: grayscale(15%);
+  transition: filter 0.4s;
+}
+.home-speaking-feature:hover .home-speaking-photo { filter: grayscale(0%); }
