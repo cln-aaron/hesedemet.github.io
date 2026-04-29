@@ -1556,10 +1556,15 @@ footer { flex-wrap: wrap; }
   border-top: 1px solid var(--edge);
 }
 .home-speaking-inner {
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: 80px;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.home-speaking-meta {
+  display: flex;
+  align-items: flex-end;
+  gap: 64px;
+  flex-wrap: wrap;
 }
 .home-speaking-stats {
   display: flex;
@@ -1594,14 +1599,15 @@ footer { flex-wrap: wrap; }
   gap: 14px;
 }
 .home-speaking-badge {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 10px;
   font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.16em;
+  font-size: 12px;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent);
+  white-space: nowrap;
 }
 .home-speaking-badge-dot {
   width: 7px; height: 7px;
@@ -1644,8 +1650,8 @@ footer { flex-wrap: wrap; }
 }
 .home-speaking-link:hover { color: var(--accent); }
 @media (max-width: 900px) {
-  .home-speaking-inner { grid-template-columns: 1fr; gap: 40px; }
-  .home-speaking-feature { padding: 28px 24px; }
+  .home-speaking-meta { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .home-speaking-badge { white-space: normal; }
 }
 
 /* ─── HOME PAGE: MEDIA HIGHLIGHT ────────────────────────────────── */
