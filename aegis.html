@@ -52,7 +52,7 @@
         "@id": "https://hesedemet.asia/#organization",
         "name": "Hesed & Emet Advisory",
         "url": "https://hesedemet.asia",
-        "sameAs": ["https://www.linkedin.com/in/aaronangsg/"]
+        "sameAs": []
       }
     ]
   }
@@ -96,18 +96,15 @@
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="portfolio.html">Portfolio</a></li>
       <li><a href="aegis.html" class="nav-aegis active">AEGIS·AI</a></li>
-      <li><a href="speaking.html">Speaking <span class="nav-tag">A</span></a></li>
-      <li><a href="media.html">Media <span class="nav-tag">A</span></a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
     <a href="index.html#contact" class="nav-cta">Engage Us</a>
   </nav>
 
-  <!-- ── HERO ──────────────────────────────────────────────────────── -->
+  <!-- ── HERO ──────────────────────────────────────── -->
   <section id="aegis-hero">
     <div class="aegis-hero-bg"></div>
     <div class="aegis-hero-scan"></div>
@@ -135,42 +132,27 @@
             </clipPath>
           </defs>
 
-          <!-- Outer shield border -->
           <path d="M100,8 L188,50 L188,138 C188,184 140,214 100,234 C60,214 12,184 12,138 L12,50 Z"
                 stroke="#2AFFD2" stroke-width="1.5" opacity="0.5" class="aegis-shield-ring-outer"/>
 
-          <!-- Second shield line -->
           <path d="M100,20 L178,57 L178,138 C178,178 134,205 100,222 C66,205 22,178 22,138 L22,57 Z"
                 stroke="#2AFFD2" stroke-width="0.75" opacity="0.2"/>
 
-          <!-- Clipped interior elements -->
           <g clip-path="url(#shield-clip)">
-            <!-- Layer rings (concentric circles, representing 8 layers) -->
-            <!-- L1: Asset Discovery -->
             <circle cx="100" cy="128" r="92" stroke="#2AFFD2" stroke-width="0.6" opacity="0.10"/>
-            <!-- L2: Model Provenance -->
             <circle cx="100" cy="128" r="78" stroke="#2AFFD2" stroke-width="0.6" opacity="0.12"/>
-            <!-- L3: Identity -->
             <circle cx="100" cy="128" r="64" stroke="#2AFFD2" stroke-width="0.6" opacity="0.16"/>
-            <!-- L4: Data Lake -->
             <circle cx="100" cy="128" r="52" stroke="#00B8F5" stroke-width="0.75" opacity="0.20"/>
-            <!-- L5: Correlation -->
             <circle cx="100" cy="128" r="40" stroke="#00B8F5" stroke-width="0.75" opacity="0.26"/>
-            <!-- L6: Investigation -->
             <circle cx="100" cy="128" r="29" stroke="#2AFFD2" stroke-width="0.75" opacity="0.35"/>
-            <!-- L7: Model Assurance -->
             <circle cx="100" cy="128" r="18" stroke="#2AFFD2" stroke-width="1" opacity="0.45"/>
-            <!-- L8: Continuous Red Team — RED -->
             <circle cx="100" cy="128" r="9" stroke="#FF3A5C" stroke-width="1.2" opacity="0.8" class="aegis-shield-ring-red"/>
 
-            <!-- Grid crosshairs -->
             <line x1="12" y1="128" x2="188" y2="128" stroke="#2AFFD2" stroke-width="0.4" stroke-dasharray="3 5" opacity="0.2"/>
             <line x1="100" y1="8"   x2="100" y2="234" stroke="#2AFFD2" stroke-width="0.4" stroke-dasharray="3 5" opacity="0.2"/>
 
-            <!-- Animated scan line -->
             <line x1="12" y1="80" x2="188" y2="80" stroke="#2AFFD2" stroke-width="1" opacity="0.6" class="aegis-shield-scan"/>
 
-            <!-- Radial spokes -->
             <line x1="100" y1="128" x2="100" y2="36" stroke="#2AFFD2" stroke-width="0.5" opacity="0.15"/>
             <line x1="100" y1="128" x2="168" y2="78" stroke="#2AFFD2" stroke-width="0.5" opacity="0.15"/>
             <line x1="100" y1="128" x2="168" y2="178" stroke="#2AFFD2" stroke-width="0.5" opacity="0.15"/>
@@ -178,15 +160,12 @@
             <line x1="100" y1="128" x2="32"  y2="178" stroke="#2AFFD2" stroke-width="0.5" opacity="0.15"/>
             <line x1="100" y1="128" x2="32"  y2="78"  stroke="#2AFFD2" stroke-width="0.5" opacity="0.15"/>
 
-            <!-- Core glow -->
             <circle cx="100" cy="128" r="14" fill="#2AFFD2" opacity="0.05"/>
             <circle cx="100" cy="128" r="7"  fill="#2AFFD2" opacity="0.12"/>
             <circle cx="100" cy="128" r="3.5" fill="#2AFFD2"/>
-            <!-- Red team core pulse -->
             <circle cx="100" cy="128" r="1.5" fill="#FF3A5C" class="aegis-shield-ring-red"/>
           </g>
 
-          <!-- Shield corner nodes -->
           <circle cx="100" cy="8"   r="3"   fill="#2AFFD2" opacity="0.9"/>
           <circle cx="188" cy="50"  r="2.5" fill="#2AFFD2" opacity="0.6"/>
           <circle cx="188" cy="138" r="2.5" fill="#2AFFD2" opacity="0.6"/>
@@ -194,13 +173,11 @@
           <circle cx="12"  cy="138" r="2.5" fill="#2AFFD2" opacity="0.6"/>
           <circle cx="12"  cy="50"  r="2.5" fill="#2AFFD2" opacity="0.6"/>
 
-          <!-- L8 label -->
           <text x="116" y="132" font-family="DM Mono, monospace" font-size="7" fill="#FF3A5C" opacity="0.85" letter-spacing="0.5">L08</text>
         </svg>
       </div>
     </div>
 
-    <!-- Stats bar -->
     <div class="aegis-stats-bar">
       <div class="aegis-stat">
         <div class="aegis-stat-num">USD 1.366T</div>
@@ -220,7 +197,7 @@
     </div>
   </section>
 
-  <!-- ── SECTION 01: THE PROBLEM ──────────────────────────────────── -->
+  <!-- ── SECTION 01: THE PROBLEM ── -->
   <section id="problem" class="aegis-section aegis-section-dark">
     <div class="section-inner">
       <div class="aegis-section-header reveal">
@@ -256,7 +233,7 @@
     </div>
   </section>
 
-  <!-- ── SECTION 02: THE PLATFORM ─────────────────────────────────── -->
+  <!-- ── SECTION 02: THE PLATFORM ── -->
   <section id="platform" class="aegis-section">
     <div class="section-inner">
       <div class="aegis-section-header reveal">
@@ -357,7 +334,6 @@
           </ul>
         </div>
 
-        <!-- LAYER 08: FLAGSHIP -->
         <div class="aegis-layer-card aegis-layer-flagship reveal">
           <div class="aegis-layer-badge">Flagship Layer · The Differentiator</div>
           <div class="aegis-layer-num">LAYER 08</div>
@@ -379,7 +355,7 @@
     </div>
   </section>
 
-  <!-- ── SECTION 03: WHO IT'S FOR ─────────────────────────────────── -->
+  <!-- ── SECTION 03: WHO IT'S FOR ── -->
   <section id="personas" class="aegis-section aegis-section-dark">
     <div class="section-inner">
       <div class="aegis-section-header reveal">
@@ -434,7 +410,7 @@
     </div>
   </section>
 
-  <!-- ── SECTION 04: DIFFERENTIATION ──────────────────────────────── -->
+  <!-- ── SECTION 04: DIFFERENTIATION ── -->
   <section id="differentiation" class="aegis-section">
     <div class="section-inner">
       <div class="aegis-section-header reveal">
@@ -477,7 +453,7 @@
     </div>
   </section>
 
-  <!-- ── SECTION 05: ECOSYSTEM ─────────────────────────────────────── -->
+  <!-- ── SECTION 05: ECOSYSTEM ── -->
   <section id="ecosystem" class="aegis-section aegis-section-dark">
     <div class="section-inner">
       <div class="aegis-section-header reveal">
@@ -552,7 +528,7 @@
     </div>
   </section>
 
-  <!-- ── SECTION 06: WHY NOW ───────────────────────────────────────── -->
+  <!-- ── SECTION 06: WHY NOW ── -->
   <section id="timing" class="aegis-section">
     <div class="section-inner">
       <div class="aegis-section-header reveal">
@@ -610,7 +586,7 @@
     </div>
   </section>
 
-  <!-- ── SECTION 07: CTA ───────────────────────────────────────────── -->
+  <!-- ── SECTION 07: CTA ── -->
   <section id="cta" class="aegis-section aegis-section-dark">
     <div class="section-inner">
       <div class="aegis-section-header reveal">
@@ -659,12 +635,9 @@
     </div>
     <div class="footer-links">
       <a href="index.html">Home</a>
-      <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="portfolio.html">Portfolio</a>
       <a href="aegis.html">AEGIS·AI</a>
-      <a href="speaking.html">Speaking</a>
-      <a href="media.html">Media</a>
       <a href="index.html#contact">Contact</a>
     </div>
     <div class="footer-legal">
